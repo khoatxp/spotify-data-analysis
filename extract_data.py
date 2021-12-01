@@ -59,11 +59,17 @@ def get_tracks_data(track_ids, chunk_size):
         try:
             track_id_list = track_ids[i:i+chunk_size]
             track_results = sp.tracks(track_id_list)
-            for track in track_results['tracks']:                              
+            for track in track_results['tracks']:  
+                genres = sp.artist(track['artists'][0]['external_urls']['spotify'])['genres']  
+                if len(genres) == 0:
+                    continue
+                else:
+                    genre = genres[0]      
                 single_track_dict = {                                       
                     'name': track['name'],
                     'artist': track['artists'][0]['name'],
                     'id': track['id'],
+                    'genre': genre,
                     'release_date': track['album']['release_date'],
                     'popularity':  track['popularity'],
                 }
@@ -86,6 +92,6 @@ if __name__ == "__main__":
         audio_features_df = pd.DataFrame(audio_features_list)
         audio_features_df.dropna(inplace=True)
 
-        merged_df = tracks_data_df.merge(audio_features_df, on = 'id', how = 'left')
+        merged_df = tracks_data_df.merge(audio_features_df, on='id', how='left')
         merged_df.dropna(inplace=True)
-        merged_df.to_csv('extracted_data.csv', sep = ',')
+        merged_df.to_csv('extracted_data.csv', sep=',')
