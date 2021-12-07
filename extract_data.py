@@ -124,5 +124,4 @@ if __name__ == "__main__":
         merged_df = tracks_data_df.merge(audio_features_df, on='id', how='inner')
         merged_df.dropna(inplace=True)
         merged_df.drop_duplicates(inplace=True)
-        merged_df.reset_index(inplace=True, drop=True)
-        merged_df.to_csv('data.csv', sep=',')
+        merged_df.to_csv('data.csv', sep=',', index=False)
