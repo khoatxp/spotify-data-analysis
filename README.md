@@ -7,14 +7,26 @@ To replicate our results, the requirement packages is specified in requiremnets.
 
 (Optional) A virtual machine is highly recommended. Set up guidance:
 * With conda:
+```bash
 conda create -n venv python=3.7
+```
+```bash
 conda activate venv
+```
+```bash
 conda install --file requirements.txt
+```
 
 * Without conda:
+```bash
 python3 -m venv venv
+```
+```bash
 souce venv/bin/activate
+```
+```bash
 pip3 install -r requirements.txt
+```
 
 ## Usage
 
