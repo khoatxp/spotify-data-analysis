@@ -3,11 +3,25 @@
 ## Setup
 You will need Git, Python 3.7+, Jupyter Notebook installed on your machine.
 
+To replicate our results, the requirement packages is specified in requiremnets.txt. To install:
+
+(Optional) A virtual machine is highly recommended. Set up guidance:
+* With conda:
+conda create -n venv python=3.7
+conda activate venv
+conda install --file requirements.txt
+
+* Without conda:
+python3 -m venv venv
+souce venv/bin/activate
+pip3 install -r requirements.txt
+
 ## Usage
 
 ### Download datasets
 * Download challenger_set.json [here](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)
 * Download SpotifyFeatures.csv [here](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db)
+
 
 ### Collect data from Spotify API
 * Collect data for the first dataset

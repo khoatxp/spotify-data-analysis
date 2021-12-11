@@ -1,3 +1,5 @@
 *.json
 *.csv
 *.cache
+.ipynb_checkpoints
+.virtual_documents
