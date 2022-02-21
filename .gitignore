@@ -1,5 +1,6 @@
 *.json
 *.csv
 *.cache
+*.env
 .ipynb_checkpoints
 .virtual_documents
